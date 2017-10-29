@@ -6,10 +6,10 @@ import {EventListItem} from './../models/EventListItem';
 export class EventService {
     public getEvent(id: string): Promise<Event> {
         return new Promise<Event>((resolve, reject) => {
-            let valFromLS: string;
-            valFromLS = localStorage.getItem(id);
-            let Event: Event = JSON.parse(valFromLS);
-            resolve(Event);
+            let event: Event;
+            event = new Event();
+            event.Load(id);
+            resolve(event);
         } );        
     }
 

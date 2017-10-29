@@ -13,44 +13,34 @@ import 'rxjs/add/operator/switchMap';
   providers: [EventService]
 })
 export class EventDetailComponent implements OnInit {
-    @Input() Event: Event;
-
-    event: Event;
-id: string;
+  //@Input() 
+  event: Event = new Event();
 
     constructor(
       private EventService: EventService,
       private route: ActivatedRoute,
       private location: Location,
       private router: Router,
-    ) {}
+    ) {    }
 
     save(): void {
       this.event.Save();
     }
 
+    next(): void {
+      this.router.navigate(['/event', this.event.EventID, 'home']);
+    }
+
     ngOnInit(): void {
       this.route.paramMap
         .switchMap((params: ParamMap) => this.EventService.getEvent(params.get('id')))
-        .subscribe(data => this.Event = data);
-
-      if (this.event)
-      {
-        // exists, do nothing
-      }
-      else
-      {
-        if (this.route.snapshot.paramMap.get('id'))
-        {
-          //alert("Load This: " + this.route.snapshot.paramMap.get('id'));
-          this.EventService.getEvent(this.route.snapshot.paramMap.get('id')).then(data => this.event = data);
-        }
-        else
-        {
-          //alert("new event, create");
-          this.event = new Event();
-        }
-      } 
+        .subscribe(data => {
+          this.event = data; 
+          if (!this.event) {
+            this.event=new Event();
+            this.event.Name = "New Event";
+          }
+        });
     }
 
 }

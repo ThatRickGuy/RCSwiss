@@ -16,46 +16,52 @@ var Event_service_1 = require("./../../shared/services/Event.service");
 var Event_1 = require("./../../shared/models/Event");
 var router_2 = require("@angular/router");
 require("rxjs/add/operator/switchMap");
-var EventDetailComponent = /** @class */ (function () {
-    function EventDetailComponent(EventService, route, location, router) {
+var EventHomeComponent = /** @class */ (function () {
+    function EventHomeComponent(EventService, route, location, router) {
         this.EventService = EventService;
         this.route = route;
         this.location = location;
         this.router = router;
-        //@Input() 
-        this.event = new Event_1.Event();
     }
-    EventDetailComponent.prototype.save = function () {
-        this.event.Save();
+    EventHomeComponent.prototype.save = function () {
+        this.Event.Save();
     };
-    EventDetailComponent.prototype.next = function () {
-        this.router.navigate(['/event', this.event.EventID, 'home']);
-    };
-    EventDetailComponent.prototype.ngOnInit = function () {
+    EventHomeComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.paramMap
             .switchMap(function (params) { return _this.EventService.getEvent(params.get('id')); })
-            .subscribe(function (data) {
-            _this.event = data;
-            if (!_this.event) {
-                _this.event = new Event_1.Event();
-                _this.event.Name = "New Event";
+            .subscribe(function (data) { return _this.Event = data; });
+        if (this.Event) {
+            // exists, do nothing
+        }
+        else {
+            if (this.route.snapshot.paramMap.get('id')) {
+                //alert("Load This: " + this.route.snapshot.paramMap.get('id'));
+                this.EventService.getEvent(this.route.snapshot.paramMap.get('id')).then(function (data) { return _this.Event = data; });
             }
-        });
+            else {
+                //alert("new event, create");
+                this.Event = new Event_1.Event();
+            }
+        }
     };
-    EventDetailComponent = __decorate([
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Event_1.Event)
+    ], EventHomeComponent.prototype, "Event", void 0);
+    EventHomeComponent = __decorate([
         core_1.Component({
-            selector: 'Event-detail',
-            templateUrl: './Event-detail.html',
-            styleUrls: ['./Event-detail.css'],
+            selector: 'Event-home',
+            templateUrl: './Event-home.html',
+            styleUrls: ['./Event-home.css'],
             providers: [Event_service_1.EventService]
         }),
         __metadata("design:paramtypes", [Event_service_1.EventService,
             router_1.ActivatedRoute,
             common_1.Location,
             router_2.Router])
-    ], EventDetailComponent);
-    return EventDetailComponent;
+    ], EventHomeComponent);
+    return EventHomeComponent;
 }());
-exports.EventDetailComponent = EventDetailComponent;
-//# sourceMappingURL=Event-detail.js.map
+exports.EventHomeComponent = EventHomeComponent;
+//# sourceMappingURL=Event-home.js.map

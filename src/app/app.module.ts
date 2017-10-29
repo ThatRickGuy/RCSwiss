@@ -5,6 +5,7 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent }        from './components/app/app.component';
 import { EventsComponent }     from './components/Events/Events';
 import { EventDetailComponent} from './components/Event-detail/Event-detail';
+import { EventHomeComponent} from './components/Event-home/Event-home';
 import { HomeComponent }       from './components/Home/home';
 
 import { EventService }         from './shared/services/Event.service';
@@ -37,6 +38,7 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIco
     AppComponent,
     EventsComponent,
     EventDetailComponent,
+    EventHomeComponent,
     HomeComponent],
   providers: [
     EventService

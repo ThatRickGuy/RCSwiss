@@ -19,14 +19,14 @@ var Event = /** @class */ (function () {
         valFromLS = localStorage.getItem("EventListItems");
         var EventListItems = JSON.parse(valFromLS);
         if (EventListItems) {
-            alert("List Exists");
+            //alert("List Exists");
             if (Object.keys(EventListItems).length > 0) {
-                alert("List has more than zero elements");
+                //alert("List has more than zero elements");
                 var Found = false;
                 for (var _i = 0, EventListItems_1 = EventListItems; _i < EventListItems_1.length; _i++) {
                     var entry = EventListItems_1[_i];
                     if (entry.EventID == this.EventID) {
-                        alert("List contains this event " + this.EventID);
+                        //alert("List contains this event " + this.EventID);
                         Found = true;
                         //update values
                         entry.Name = this.Name;
@@ -38,7 +38,7 @@ var Event = /** @class */ (function () {
                     }
                 }
                 if (!Found) {
-                    alert("List does NOT contain this event");
+                    //alert("List does NOT contain this event");
                     // list exists, ours isn't in it
                     EventListItems.push(new EventListItem_1.EventListItem());
                     EventListItems[Object.keys(EventListItems).length - 1].EventID = this.EventID;
@@ -50,7 +50,7 @@ var Event = /** @class */ (function () {
                 }
             }
             else {
-                alert("List has no elements");
+                //alert("List has no elements");
                 EventListItems = new Array();
                 EventListItems.push(new EventListItem_1.EventListItem());
                 EventListItems[Object.keys(EventListItems).length - 1].EventID = this.EventID;
@@ -62,7 +62,7 @@ var Event = /** @class */ (function () {
             }
         }
         else {
-            alert("List does NOT exist");
+            //alert("List does NOT exist");
             EventListItems = new Array();
             EventListItems.push(new EventListItem_1.EventListItem());
             EventListItems[Object.keys(EventListItems).length - 1].EventID = this.EventID;
@@ -77,6 +77,7 @@ var Event = /** @class */ (function () {
         var valFromLS;
         valFromLS = localStorage.getItem(EventID);
         var EventData = JSON.parse(valFromLS);
+        this.EventID = EventData.EventID;
         this.BestPaintedPlayerID = EventData.BestPaintedPlayerID;
         this.BestSportPlayerID = EventData.BestSportPlayerID;
         this.EventDate = EventData.EventDate;

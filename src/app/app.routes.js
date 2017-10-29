@@ -8,19 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-//import { HeroesComponent }      from './components/heroes/heroes.component';
-//import { HeroDetailComponent }  from './components/hero-detail/hero-detail.component';
 var home_1 = require("./components/Home/home");
 var Events_1 = require("./components/Events/Events");
 var Event_detail_1 = require("./components/Event-detail/Event-detail");
+var Event_home_1 = require("./components/Event-home/Event-home");
 var routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: home_1.HomeComponent },
     { path: 'events', component: Events_1.EventsComponent },
     { path: 'event/:id', component: Event_detail_1.EventDetailComponent },
-    { path: 'event', component: Event_detail_1.EventDetailComponent }
+    { path: 'event', component: Event_detail_1.EventDetailComponent },
+    { path: 'event/:id/home', component: Event_home_1.EventHomeComponent },
 ];
-//{ path: 'detail/:id', component: HeroDetailComponent },
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }

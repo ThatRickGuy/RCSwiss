@@ -25,7 +25,7 @@ export class Event {
         this.EventDate = new Date();
     }
 
-    Save() {
+    public Save() {
         this.RCSwissVersion = 0.1;
         let jsonString = JSON.stringify(this);
         localStorage.setItem(this.EventID, jsonString);
@@ -39,15 +39,15 @@ export class Event {
         let EventListItems: EventListItem[] = JSON.parse(valFromLS);
         if (EventListItems)
         {
-            alert("List Exists");
+            //alert("List Exists");
             if (Object.keys(EventListItems).length > 0) {   // list has elements, find ours
-                alert("List has more than zero elements");
+                //alert("List has more than zero elements");
                 let Found:boolean = false;
 
                 for (let entry of EventListItems) {
                     if (entry.EventID == this.EventID)
                     {
-                        alert("List contains this event " + this.EventID);
+                        //alert("List contains this event " + this.EventID);
                         Found=true;
                         //update values
                         entry.Name = this.Name;
@@ -60,7 +60,7 @@ export class Event {
                 }
                 if (!Found)
                 {
-                    alert("List does NOT contain this event");
+                    //alert("List does NOT contain this event");
                     // list exists, ours isn't in it
                     EventListItems.push(new EventListItem());
                     EventListItems[Object.keys(EventListItems).length-1].EventID = this.EventID;
@@ -73,7 +73,7 @@ export class Event {
 
             }
             else {   // no elements, add this one
-                alert("List has no elements");
+                //alert("List has no elements");
                 EventListItems = new Array<EventListItem>();              
                 EventListItems.push(new EventListItem());
                 EventListItems[Object.keys(EventListItems).length-1].EventID = this.EventID;
@@ -86,7 +86,7 @@ export class Event {
         }
         
         else {   // doesn't exist
-            alert("List does NOT exist");
+            //alert("List does NOT exist");
             EventListItems = new Array<EventListItem>();              
             EventListItems.push(new EventListItem());
             EventListItems[Object.keys(EventListItems).length-1].EventID = this.EventID;
@@ -102,6 +102,7 @@ export class Event {
         let valFromLS: string;
         valFromLS = localStorage.getItem(EventID);
         let EventData: Event = JSON.parse(valFromLS);
+        this.EventID = EventData.EventID;
         this.BestPaintedPlayerID = EventData.BestPaintedPlayerID;
         this.BestSportPlayerID = EventData.BestSportPlayerID;
         this.EventDate = EventData.EventDate;

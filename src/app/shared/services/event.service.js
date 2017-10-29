@@ -7,15 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var Event_1 = require("./../models/Event");
 var EventService = /** @class */ (function () {
     function EventService() {
     }
     EventService.prototype.getEvent = function (id) {
         return new Promise(function (resolve, reject) {
-            var valFromLS;
-            valFromLS = localStorage.getItem(id);
-            var Event = JSON.parse(valFromLS);
-            resolve(Event);
+            var event;
+            event = new Event_1.Event();
+            event.Load(id);
+            resolve(event);
         });
     };
     EventService.prototype.GetEventList = function () {
