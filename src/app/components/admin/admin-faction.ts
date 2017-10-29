@@ -44,9 +44,7 @@ export class AdminFactionComponent  implements OnInit {
   }
 
   public deletRecord(factionID: string): void {
-    alert (factionID);
     var target: Faction = this.admin.Factions.find(x => x.FactionID == factionID);
-    alert (target);
     var index = this.admin.Factions.indexOf(target, 0);
     if (index > -1) {
       this.admin.Factions.splice(index, 1);

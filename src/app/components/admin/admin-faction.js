@@ -54,9 +54,7 @@ var AdminFactionComponent = /** @class */ (function () {
         this.loadFactions();
     };
     AdminFactionComponent.prototype.deletRecord = function (factionID) {
-        alert(factionID);
         var target = this.admin.Factions.find(function (x) { return x.FactionID == factionID; });
-        alert(target);
         var index = this.admin.Factions.indexOf(target, 0);
         if (index > -1) {
             this.admin.Factions.splice(index, 1);
