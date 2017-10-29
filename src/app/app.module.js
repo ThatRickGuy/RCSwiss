@@ -23,6 +23,8 @@ var Admin_service_1 = require("./shared/services/Admin.service");
 var app_routes_1 = require("./app.routes");
 var animations_1 = require("@angular/platform-browser/animations");
 var material_1 = require("@angular/material");
+var table_1 = require("@angular/material/table");
+var table_2 = require("@angular/cdk/table");
 //import { MatButtonModule } from '@angular/material';
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -38,7 +40,9 @@ var AppModule = /** @class */ (function () {
                 material_1.MatMenuModule,
                 material_1.MatCardModule,
                 material_1.MatToolbarModule,
-                material_1.MatIconModule
+                material_1.MatIconModule,
+                table_1.MatTableModule,
+                table_2.CdkTableModule
                 //MatButtonModule,
                 // MatCheckboxModule
             ],

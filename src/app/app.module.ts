@@ -21,6 +21,9 @@ import { AppRoutingModule }     from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 
+import { MatTableModule } from '@angular/material/table';
+import { CdkTableModule } from '@angular/cdk/table';
+
 //import { MatButtonModule } from '@angular/material';
 
 @NgModule({
@@ -33,7 +36,9 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIco
     MatMenuModule,
     MatCardModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    CdkTableModule
     //MatButtonModule,
    // MatCheckboxModule
     ],
