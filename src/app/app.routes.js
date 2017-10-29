@@ -12,9 +12,17 @@ var home_1 = require("./components/Home/home");
 var Events_1 = require("./components/Events/Events");
 var Event_detail_1 = require("./components/Event-detail/Event-detail");
 var Event_home_1 = require("./components/Event-home/Event-home");
+var admin_1 = require("./components/admin/admin");
+var admin_faction_1 = require("./components/admin/admin-faction");
+var admin_format_1 = require("./components/admin/admin-format");
+var admin_meta_1 = require("./components/admin/admin-meta");
 var routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: home_1.HomeComponent },
+    { path: 'admin', component: admin_1.AdminComponent },
+    { path: 'admin-faction', component: admin_faction_1.AdminFactionComponent },
+    { path: 'admin-format', component: admin_format_1.AdminFormatComponent },
+    { path: 'admin-meta', component: admin_meta_1.AdminMetaComponent },
     { path: 'events', component: Events_1.EventsComponent },
     { path: 'event/:id', component: Event_detail_1.EventDetailComponent },
     { path: 'event', component: Event_detail_1.EventDetailComponent },

@@ -1,16 +1,9 @@
 "use strict";
-//Factions: Faction[];
-//  FactionID: string;
-//  Name: string;
 //Metas: Meta[];
 //  MetaID: string;
 //  Country: string;
 //  Province: string;
 //  City: string;
-//EventFormats: EventFormat[];
-//  FormatID: string;
-//  FormatName: string;
-//  Scenarios: string[];
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -23,25 +16,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var admin_service_1 = require("./../../shared/services/admin.service");
-var AdminComponent = /** @class */ (function () {
-    function AdminComponent(adminService) {
+var AdminMetaComponent = /** @class */ (function () {
+    function AdminMetaComponent(adminService) {
         this.adminService = adminService;
     }
-    AdminComponent.prototype.ngOnInit = function () {
+    AdminMetaComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.adminService.getAdmin()
             .then(function (data) { return _this.admin = data; });
     };
-    AdminComponent = __decorate([
+    AdminMetaComponent = __decorate([
         core_1.Component({
-            selector: 'admin',
-            templateUrl: './admin.html',
+            selector: 'admin-meta',
+            templateUrl: './admin-meta.html',
             styleUrls: ['./admin.css'],
             providers: [admin_service_1.AdminService]
         }),
         __metadata("design:paramtypes", [admin_service_1.AdminService])
-    ], AdminComponent);
-    return AdminComponent;
+    ], AdminMetaComponent);
+    return AdminMetaComponent;
 }());
-exports.AdminComponent = AdminComponent;
-//# sourceMappingURL=admin.js.map
+exports.AdminMetaComponent = AdminMetaComponent;
+//# sourceMappingURL=admin-meta.js.map

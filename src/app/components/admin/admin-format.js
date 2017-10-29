@@ -1,12 +1,4 @@
 "use strict";
-//Factions: Faction[];
-//  FactionID: string;
-//  Name: string;
-//Metas: Meta[];
-//  MetaID: string;
-//  Country: string;
-//  Province: string;
-//  City: string;
 //EventFormats: EventFormat[];
 //  FormatID: string;
 //  FormatName: string;
@@ -23,25 +15,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var admin_service_1 = require("./../../shared/services/admin.service");
-var AdminComponent = /** @class */ (function () {
-    function AdminComponent(adminService) {
+var AdminFormatComponent = /** @class */ (function () {
+    function AdminFormatComponent(adminService) {
         this.adminService = adminService;
     }
-    AdminComponent.prototype.ngOnInit = function () {
+    AdminFormatComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.adminService.getAdmin()
             .then(function (data) { return _this.admin = data; });
     };
-    AdminComponent = __decorate([
+    AdminFormatComponent = __decorate([
         core_1.Component({
-            selector: 'admin',
-            templateUrl: './admin.html',
+            selector: 'admin-format',
+            templateUrl: './admin-format.html',
             styleUrls: ['./admin.css'],
             providers: [admin_service_1.AdminService]
         }),
         __metadata("design:paramtypes", [admin_service_1.AdminService])
-    ], AdminComponent);
-    return AdminComponent;
+    ], AdminFormatComponent);
+    return AdminFormatComponent;
 }());
-exports.AdminComponent = AdminComponent;
-//# sourceMappingURL=admin.js.map
+exports.AdminFormatComponent = AdminFormatComponent;
+//# sourceMappingURL=admin-format.js.map

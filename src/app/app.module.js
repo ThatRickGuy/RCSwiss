@@ -10,11 +10,16 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./components/app/app.component");
+var admin_1 = require("./components/admin/admin");
+var admin_faction_1 = require("./components/admin/admin-faction");
+var admin_format_1 = require("./components/admin/admin-format");
+var admin_meta_1 = require("./components/admin/admin-meta");
 var Events_1 = require("./components/Events/Events");
 var Event_detail_1 = require("./components/Event-detail/Event-detail");
 var Event_home_1 = require("./components/Event-home/Event-home");
 var home_1 = require("./components/Home/home");
 var Event_service_1 = require("./shared/services/Event.service");
+var Admin_service_1 = require("./shared/services/Admin.service");
 var app_routes_1 = require("./app.routes");
 var animations_1 = require("@angular/platform-browser/animations");
 var material_1 = require("@angular/material");
@@ -40,13 +45,18 @@ var AppModule = /** @class */ (function () {
             // exports: [MatButtonModule, MatCheckboxModule],
             declarations: [
                 app_component_1.AppComponent,
+                admin_1.AdminComponent,
+                admin_faction_1.AdminFactionComponent,
+                admin_format_1.AdminFormatComponent,
+                admin_meta_1.AdminMetaComponent,
                 Events_1.EventsComponent,
                 Event_detail_1.EventDetailComponent,
                 Event_home_1.EventHomeComponent,
                 home_1.HomeComponent
             ],
             providers: [
-                Event_service_1.EventService
+                Event_service_1.EventService,
+                Admin_service_1.AdminService
             ],
             bootstrap: [app_component_1.AppComponent]
         })
