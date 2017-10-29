@@ -1,0 +1,6 @@
+<h2>My Events</h2>
+<ul class="EventListItem">
+    <li *ngFor="let Event of EventList" [class.selected]="Event === selectedEvent" (click)="onSelect(Event)" ng-click="onSelect(Event)">
+        <a><span class="badge">{{Event.EventDate | date:"MM/dd/yyyy"}} {{Event.Name}}</span></a>
+    </li>
+</ul>

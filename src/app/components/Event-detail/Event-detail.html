@@ -1,0 +1,15 @@
+<h1>My Event</h1>
+
+<div *ngIf="event">
+    <h2>{{event.Name}} details!</h2>
+    <div><label>id: </label>{{event.EventID}}</div>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="event.Name" />
+    </div>
+    <div>
+        <label>Event Date:</label>
+        <input type="datetime" id="myDatetime" value="{{event.EventDate}}">
+    </div>
+    <button (click)="save()">Save</button>
+</div>
