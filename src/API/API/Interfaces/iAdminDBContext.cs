@@ -1,9 +1,13 @@
 using API.Models;
+using System;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace API.Interfaces
 {
-  interface IIAdminDBContext
+  interface IAdminDBContext: IDisposable
   {
     DbSet<EventFormat> EventFormats { get; set; }
     DbSet<Scenario> Scenarios { get; set; }
@@ -11,6 +15,5 @@ namespace API.Interfaces
     DbSet<Meta> Metas { get; set; }
 
     int SaveChanges();
-
   }
 }
