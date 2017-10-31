@@ -12,7 +12,7 @@ namespace API.DataAccess
     public DbSet<Meta> Metas { get; set; }
 
     public AdminDBContext()
-      : base("RCSwissAdmin")
+      : base("RCSwiss")
     {
     }
   }
