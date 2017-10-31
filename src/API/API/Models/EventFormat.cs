@@ -9,6 +9,6 @@ namespace API.Models
   {
     public Guid FormatID { get; set; }
     public string Name { get; set; }
-    public List<Scenario> Scenarios { get; set; }
+    public virtual List<Scenario> Scenarios { get; set; }
   }
 }
