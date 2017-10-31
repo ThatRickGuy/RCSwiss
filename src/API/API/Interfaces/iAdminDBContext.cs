@@ -1,12 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using API.Models;
+using System.Data.Entity;
 
 namespace API.Interfaces
 {
-  interface iAdminDBContext
+  interface IIAdminDBContext
   {
+    DbSet<EventFormat> EventFormats { get; set; }
+    DbSet<Scenario> Scenarios { get; set; }
+    DbSet<Faction> Factions { get; set; }
+    DbSet<Meta> Metas { get; set; }
+
+    int SaveChanges();
+
   }
 }
