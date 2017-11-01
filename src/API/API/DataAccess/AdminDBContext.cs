@@ -5,7 +5,7 @@ using System.Data.Entity.Infrastructure;
 
 namespace API.DataAccess
 {
-  public class AdminDBContext : DbContext, IAdminDBContext
+  public class AdminDBContext : DbContext
   {
     public DbSet<EventFormat> EventFormats { get; set; }
     public DbSet<Scenario> Scenarios { get; set; }

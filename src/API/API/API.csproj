@@ -112,7 +112,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\IAdminDBContext.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Models\EventFormat.cs" />
     <Compile Include="Models\Faction.cs" />
