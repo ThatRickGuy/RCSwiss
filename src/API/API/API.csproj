@@ -147,6 +147,19 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Migrations\201711010238455_InitialCreate.cs" />
+    <Compile Include="Migrations\201711010238455_InitialCreate.Designer.cs">
+      <DependentUpon>201711010238455_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711010300059_UpdateAttributes.cs" />
+    <Compile Include="Migrations\201711010300059_UpdateAttributes.Designer.cs">
+      <DependentUpon>201711010300059_UpdateAttributes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711010303424_UpdateAttributesOtherModels.cs" />
+    <Compile Include="Migrations\201711010303424_UpdateAttributesOtherModels.Designer.cs">
+      <DependentUpon>201711010303424_UpdateAttributesOtherModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EventFormat.cs" />
     <Compile Include="Models\Faction.cs" />
     <Compile Include="Models\Meta.cs" />
@@ -175,6 +188,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711010238455_InitialCreate.resx">
+      <DependentUpon>201711010238455_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711010300059_UpdateAttributes.resx">
+      <DependentUpon>201711010300059_UpdateAttributes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711010303424_UpdateAttributesOtherModels.resx">
+      <DependentUpon>201711010303424_UpdateAttributesOtherModels.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -7,9 +7,11 @@ namespace API.Models
   public class Faction
   {
     [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [DatabaseGenerated(DatabaseGeneratedOption.None)]
     public Guid FactionID { get; set; }
 
+    [MaxLength(50)]
+    [Required]
     public string Name { get; set; }
   }
 }

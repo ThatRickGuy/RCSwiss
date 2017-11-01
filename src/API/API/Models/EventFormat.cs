@@ -8,9 +8,11 @@ namespace API.Models
   public class EventFormat
   {
     [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [DatabaseGenerated(DatabaseGeneratedOption.None)]
     public Guid FormatID { get; set; }
 
+    [MaxLength(50)]
+    [Required]
     public string Name { get; set; }
 
     public virtual List<Scenario> Scenarios { get; set; }
