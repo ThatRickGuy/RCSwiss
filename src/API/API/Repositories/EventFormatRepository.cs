@@ -21,9 +21,9 @@ namespace API.Repositories
 
     public void DeleteEvent(Guid id)
     {
-      EventFormat customer = new EventFormat() { FormatID = id };
-      _db.EventFormats.Attach(customer);
-      _db.EventFormats.Remove(customer);
+      EventFormat eventFormat = new EventFormat() { FormatID = id };
+      _db.EventFormats.Attach(eventFormat);
+      _db.EventFormats.Remove(eventFormat);
       _db.SaveChanges();
 
     }
