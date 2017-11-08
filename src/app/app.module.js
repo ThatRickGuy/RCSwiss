@@ -42,9 +42,7 @@ var AppModule = /** @class */ (function () {
                 material_1.MatToolbarModule,
                 material_1.MatIconModule,
                 table_1.MatTableModule,
-                table_2.CdkTableModule
-                //MatButtonModule,
-                // MatCheckboxModule
+                table_2.CdkTableModule,
             ],
             // exports: [MatButtonModule, MatCheckboxModule],
             declarations: [

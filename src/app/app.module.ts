@@ -38,7 +38,7 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatToolbarModule,
     MatIconModule,
     MatTableModule,
-    CdkTableModule
+    CdkTableModule,
     //MatButtonModule,
    // MatCheckboxModule
     ],

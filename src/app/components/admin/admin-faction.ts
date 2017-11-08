@@ -1,13 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import { Faction } from './../../shared/models/Faction';
 import { Admin } from './../../shared/models/Admin';
 import { AdminService } from './../../shared/services/admin.service';
-/**
- * @title Basic table
- */
+
 @Component({
   selector: 'admin-faction',
   styleUrls: ['./admin.css'],
@@ -34,7 +32,6 @@ export class AdminFactionComponent  implements OnInit {
   }
 
   add(): void {
-    alert(this.NewFaction);
     this.admin.Factions.push();
     let faction: Faction = new Faction();
     faction.Name = this.NewFaction;
@@ -43,7 +40,7 @@ export class AdminFactionComponent  implements OnInit {
     this.loadFactions();
   }
 
-  public deletRecord(factionID: string): void {
+  deleteRecord(factionID: string): void {
     var target: Faction = this.admin.Factions.find(x => x.FactionID == factionID);
     var index = this.admin.Factions.indexOf(target, 0);
     if (index > -1) {
@@ -66,4 +63,6 @@ export class FactionDataSource extends DataSource<any>{
   }
 
   disconnect() {}
+
 }
+

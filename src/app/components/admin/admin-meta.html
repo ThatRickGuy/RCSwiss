@@ -1,0 +1,40 @@
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.Name}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="country">
+            <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.Country}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="state">
+            <mat-header-cell *matHeaderCellDef> State/Province </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.State}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="city">
+            <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.City}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <button (click)="deleteRecord(row.FormatID);">Remove </button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
+<div>
+    <input [(ngModel)]="NewMetaName" />
+    <input [(ngModel)]="NewMetaCountry" />
+    <input [(ngModel)]="NewMetaState" />
+    <input [(ngModel)]="NewMetaCity" />
+    <button (click)="add()">Add</button>
+</div>

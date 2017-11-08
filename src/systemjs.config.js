@@ -48,7 +48,9 @@
 
             // other libraries
             'rxjs': 'npm:rxjs',
-            'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+            'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+
+            'angular-4-data-table/src/index': 'npm:angular-4-data-table/dist/main.bundle.js'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {

@@ -25,9 +25,6 @@ var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/observable/of");
 var Faction_1 = require("./../../shared/models/Faction");
 var admin_service_1 = require("./../../shared/services/admin.service");
-/**
- * @title Basic table
- */
 var AdminFactionComponent = /** @class */ (function () {
     function AdminFactionComponent(adminService) {
         this.adminService = adminService;
@@ -45,7 +42,6 @@ var AdminFactionComponent = /** @class */ (function () {
         });
     };
     AdminFactionComponent.prototype.add = function () {
-        alert(this.NewFaction);
         this.admin.Factions.push();
         var faction = new Faction_1.Faction();
         faction.Name = this.NewFaction;
@@ -53,7 +49,7 @@ var AdminFactionComponent = /** @class */ (function () {
         this.admin.Save();
         this.loadFactions();
     };
-    AdminFactionComponent.prototype.deletRecord = function (factionID) {
+    AdminFactionComponent.prototype.deleteRecord = function (factionID) {
         var target = this.admin.Factions.find(function (x) { return x.FactionID == factionID; });
         var index = this.admin.Factions.indexOf(target, 0);
         if (index > -1) {

@@ -2,8 +2,9 @@
 
 export class Meta {
     MetaID: string;
+    Name: string;
     Country: string;
-    Province: string;
+    State: string;
     City: string;
 
     constructor() {
